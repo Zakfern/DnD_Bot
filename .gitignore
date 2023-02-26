@@ -1,0 +1,3 @@
+# Project exclude paths
+/common-rabbitMq/target/
+/dispatcher/target/
