@@ -105,11 +105,11 @@ public class UpdateHandler {
 
     private void processTextMessage(Update update) {
         updateProducer.produce(RabbitQueue.TEXT_MESSAGE_UPDATE, update);
-        Long chat_id = update.getMessage().getChatId();
-        SendMessage sendMessage = messageUtils.addInlineKeyBoardToMessage(new SendMessage(), KeyboardLayouts.START_LAYOUT);
-        sendMessage.setChatId(chat_id);
-        sendMessage.setText("Выберите действие из наблора возможных");
-        SetView(sendMessage);
+//        Long chat_id = update.getMessage().getChatId();
+//        SendMessage sendMessage = messageUtils.addInlineKeyBoardToMessage(new SendMessage(), KeyboardLayouts.START_LAYOUT);
+//        sendMessage.setChatId(chat_id);
+//        sendMessage.setText("Выберите действие из наблора возможных");
+//        SetView(sendMessage);
     }
 
     public void SetView(SendMessage sendMessage) {

@@ -7,6 +7,9 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
 public class AnswerConsumerImpl implements AnswerConsumer {
+
+    //считывает из брокера ответы которы были отправлены из node
+
     private final UpdateHandler updateHandler;
 
     public AnswerConsumerImpl(UpdateHandler updateHandler) {

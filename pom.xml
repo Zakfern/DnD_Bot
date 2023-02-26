@@ -11,6 +11,7 @@
     <modules>
         <module>dispatcher</module>
         <module>common-rabbitMq</module>
+        <module>node</module>
     </modules>
 
     <properties>
@@ -27,11 +28,7 @@
     </parent>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-rabbit</artifactId>
-            <version>3.0.2</version>
-        </dependency>
+
 
         <dependency>
             <groupId>log4j</groupId>
