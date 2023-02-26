@@ -104,6 +104,7 @@ public class UpdateHandler {
     }
 
     private void processTextMessage(Update update) {
+        System.out.println("получено текстовое сообщение");
         updateProducer.produce(RabbitQueue.TEXT_MESSAGE_UPDATE, update);
 //        Long chat_id = update.getMessage().getChatId();
 //        SendMessage sendMessage = messageUtils.addInlineKeyBoardToMessage(new SendMessage(), KeyboardLayouts.START_LAYOUT);

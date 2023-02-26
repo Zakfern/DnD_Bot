@@ -22,13 +22,14 @@ public class ConsumerServiceImpl  implements ConsumerService {
     @Override
     @RabbitListener(queues = TEXT_MESSAGE_UPDATE)
     public void consumeTextMessageUpdates(Update update) {
+        System.out.println("получили из очереди rMQ + " + TEXT_MESSAGE_UPDATE);
         var message = update.getMessage();
-        var chatId = message.getChatId().toString();
+        Long chatId = message.getChatId();
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText("Hi im from Node");
+        System.out.println("Написали письмо");
+        System.out.println("Отправлем в pService " + sendMessage.toString());
         producerService.produceAnswer(sendMessage);
-
-
     }
 }

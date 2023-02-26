@@ -5,6 +5,7 @@ import org.DnD.service.ProducerService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import static org.DnD.model.RabbitQueue.ANSWER_MESSAGE;
 
 @Service
 public class ProducerServiceImpl implements ProducerService {
@@ -16,7 +17,7 @@ public class ProducerServiceImpl implements ProducerService {
 
     @Override
     public void produceAnswer(SendMessage sendMessage) {
-        rabbitTemplate.convertAndSend(RabbitQueue.ANSWER_MESSAGE, sendMessage);
-
+        System.out.println("convertAndSend");
+        rabbitTemplate.convertAndSend(ANSWER_MESSAGE, sendMessage);
     }
 }
